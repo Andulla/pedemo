@@ -54,9 +54,10 @@ class pedemo {
   # Configurations for Windows Nodes
   elsif $::kernel == 'windows'{
     user { 'Andreas':
-      ensure  => 'present',
-      comment => 'Andreas Wilke TSE Demo Account',
-      groups  => ['BUILTIN\Administrators'],
+      ensure   => 'present',
+      comment  => 'Andreas Wilke TSE Demo Account',
+      groups   => ['BUILTIN\Administrators'],
+      password => 'MyPassword123'
     }
   }
 
