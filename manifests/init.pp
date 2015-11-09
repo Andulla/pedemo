@@ -37,7 +37,7 @@
 #
 class pedemo {
 
-  file {'root.ssh':
+  file {'/root/.ssh':
     ensure => 'directory',
     owner  => 'root',
     group  => 'root',
