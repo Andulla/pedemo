@@ -37,5 +37,11 @@
 #
 class pedemo {
 
+  file { '/root/.ssh/authorized_keys':
+    owner   => 'root',
+    group   => 'root',
+    mode    => '0644',
+    content => template('pedemo/authorized_keys.erb'),
+  }
 
 }
