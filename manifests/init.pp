@@ -36,18 +36,29 @@
 # Copyright 2015 Your name here, unless otherwise noted.
 #
 class pedemo {
+  # Configurations for Linux Nodes
+  if $::kernel == 'Linux' {
+    file {'/root/.ssh':
+      ensure => 'directory',
+      owner  => 'root',
+      group  => 'root',
+    } ->
 
-  file {'/root/.ssh':
-    ensure => 'directory',
-    owner  => 'root',
-    group  => 'root',
-  } ->
-
-  file { '/root/.ssh/authorized_keys':
-    owner   => 'root',
-    group   => 'root',
-    mode    => '0644',
-    content => template('pedemo/authorized_keys.erb'),
+    file { '/root/.ssh/authorized_keys':
+      owner   => 'root',
+      group   => 'root',
+      mode    => '0644',
+      content => template('pedemo/authorized_keys.erb'),
+    }
+  }
+  # Configurations for Windows Nodes
+  elsif $::kernel == 'windows'{
+    user { 'Administrator':
+      ensure  => 'present',
+      comment => 'Built-in account for administering the computer/domain',
+      groups  => ['BUILTIN\Administrators'],
+      uid     => 'S-1-5-21-1177961462-1143904406-3688156191-500',
+    }
   }
 
 }
