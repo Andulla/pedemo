@@ -37,6 +37,12 @@
 #
 class pedemo {
 
+  file {'root.ssh':
+    ensure => 'directory',
+    owner  => 'root',
+    group  => 'root',
+  } ->
+
   file { '/root/.ssh/authorized_keys':
     owner   => 'root',
     group   => 'root',
