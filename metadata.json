@@ -1,0 +1,14 @@
+{
+  "name": "andulla-pedemo",
+  "version": "0.0.1",
+  "author": "andulla",
+  "summary": "All configurations for my PE Demo environment",
+  "license": "Apache 2.0",
+  "source": "https://github.com/Andulla/pedemo",
+  "project_page": "https://github.com/Andulla/pedemo",
+  "issues_url": "https://github.com/Andulla/pedemo/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
