@@ -1,10 +1,11 @@
 # pedemo class
 
-class pedemo {
+class pedemo (
   # My current SSH Key
-  $sshkey = 'My SSH key'
+  $sshkey = 'My SSH key',
   # Password for the local user in Windows
-  $password = 'MyPassword123'
+  $password = 'MyPassword123',
+  ){
   # Configurations for Linux Nodes
   if $::kernel == 'Linux' {
     file {'/root/.ssh':
